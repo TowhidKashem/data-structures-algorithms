@@ -12,27 +12,37 @@ function anagrams(stringA, stringB) {
   const str1 = stringA.replace(/[^\w]/g, "").toLowerCase();
   const str2 = stringB.replace(/[^\w]/g, "").toLowerCase();
 
-  if (str1.length !== str2.length) return false;
+  return str1.split("").sort().join() === str2.split("").sort().join();
 
-  const str1Map = {};
-  const str2Map = {};
+  // for (let char of stringA) {
+  //   stringB = stringB.replace(char, "");
+  // }
 
-  for (let char of str1) {
-    str1Map[char] = str1Map[char] + 1 || 1;
-  }
+  // return stringB.length === 0;
 
-  for (let char of str2) {
-    str2Map[char] = str2Map[char] + 1 || 1;
-  }
+  ///////
 
-  let isAnagram = true;
-  for (let i in str1Map) {
-    if (!str2Map[i] || str2Map[i] !== str1Map[i]) {
-      isAnagram = false;
-    }
-  }
+  // if (str1.length !== str2.length) return false;
 
-  return isAnagram;
+  // const str1Map = {};
+  // const str2Map = {};
+
+  // for (let char of str1) {
+  //   str1Map[char] = str1Map[char] + 1 || 1;
+  // }
+
+  // for (let char of str2) {
+  //   str2Map[char] = str2Map[char] + 1 || 1;
+  // }
+
+  // let isAnagram = true;
+  // for (let i in str1Map) {
+  //   if (!str2Map[i] || str2Map[i] !== str1Map[i]) {
+  //     isAnagram = false;
+  //   }
+  // }
+
+  // return isAnagram;
 }
 
 module.exports = anagrams;
