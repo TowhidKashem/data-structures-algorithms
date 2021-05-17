@@ -10,11 +10,18 @@
 //     [8, 9, 4],
 //     [7, 6, 5]]
 //  matrix(4)
-//     [[1,   2,  3, 4],
-//     [12, 13, 14, 5],
-//     [11, 16, 15, 6],
-//     [10,  9,  8, 7]]
+//     [
+//       [1,   2,  3, 4],
+//       [12, 13, 14, 5],
+//       [11, 16, 15, 6],
+//       [10,  9,  8, 7]
+//    ]
 
-function matrix(n) {}
+function matrix(n) {
+  const result = [];
+  for (let i = 0; i < n; i++) {
+    new Array(n).fill(null);
+  }
+}
 
 module.exports = matrix;
