@@ -1,4 +1,4 @@
-// First In First Out
+// First In First Out (like a line)
 class Queue {
   constructor() {
     this.arr = [];
