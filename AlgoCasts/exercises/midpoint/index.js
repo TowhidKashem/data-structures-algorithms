@@ -12,6 +12,33 @@
 //   l.insertLast('c')
 //   midpoint(l); // returns { data: 'b' }
 
-function midpoint(list) {}
+// function midpoint(list) {
+//   let slow = 0;
+//   let fast = 0;
+
+//   const traverseLinkedList = (node) => {
+//     if (!list.getAt(fast + 1) || !list.getAt(fast + 2)) {
+//       return list.getAt(slow);
+//     } else if (node.next) {
+//       slow += 1;
+//       fast += 2;
+//       return traverseLinkedList(node.next);
+//     }
+//   };
+
+//   return traverseLinkedList(list.head);
+// }
+
+function midpoint(list) {
+  let slow = list.getFirst();
+  let fast = list.getFirst();
+
+  while (fast.next && fast.next.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+
+  return slow;
+}
 
 module.exports = midpoint;

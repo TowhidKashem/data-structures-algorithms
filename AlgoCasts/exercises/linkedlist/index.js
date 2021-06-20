@@ -123,13 +123,13 @@ class LinkedList {
   }
 
   insertAt(data, index) {
-    const prevNode = this.getAt(index - 1);
-    const nextNode = this.getAt(index + 1) || this.getLast();
-
-    if (prevNode) {
-      prevNode.next = new Node(data, nextNode);
+    if (!this.head) {
+      this.head = new Node(data);
+    } else if (index === 0) {
+      this.head = new Node(data, this.head);
     } else {
-      this.head = new Node(data, null);
+      const prevNode = this.getAt(index - 1) || this.getLast();
+      prevNode.next = new Node(data, prevNode.next);
     }
   }
 }
