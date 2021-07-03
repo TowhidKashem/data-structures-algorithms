@@ -189,7 +189,7 @@ let node = list.head;
 
 while (node) {
   console.log(node.data);
-  node = node.next; // Loop will next when node = null (i.e. reaches the end)
+  node = node.next; // Loop will exit when node = null (i.e. reaches the end)
 }
 
 // Recursive method

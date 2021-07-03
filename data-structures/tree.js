@@ -1,14 +1,37 @@
-// --- Directions
-// 1) Create a node class.  The constructor
-// should accept an argument that gets assigned
-// to the data property and initialize an
-// empty array for storing children. The node
-// class should have methods 'add' and 'remove'.
-// 2) Create a tree class. The tree constructor
-// should initialize a 'root' property to null.
-// 3) Implement 'traverseBF' and 'traverseDF'
-// on the tree class.  Each method should accept a
-// function that gets called with each element in the tree
+/*
+
+    [20]          [40]          [-15]
+
+[12] [-2] [1]                    [-2]
+
+*/
+
+// const tree = {
+//   nodes: [{
+//     data: 20,
+//     children: [{
+//       data: 0,
+//       children: [{
+//         data: 12,
+//         children: null
+//       }, {
+//         data: -2,
+//         children: null
+//       }, {
+//         data: 1,
+//         children: null
+//       }]
+//     }, {
+//       data: 40
+//     }, {
+//       data: -15,
+//       children: [{
+//         data: -2,
+//         children: null
+//       }]
+//     }]
+//   }]
+// };
 
 class Node {
   constructor(data) {
@@ -39,7 +62,7 @@ class Tree {
       // Remove the first node from the array
       const node = nodes.shift();
 
-      // If the node has any children push it into the array
+      // If the node has any children push it to the end of the array
       nodes.push(...node.children);
 
       fn(node);
@@ -62,5 +85,3 @@ class Tree {
     }
   }
 }
-
-module.exports = { Tree, Node };
