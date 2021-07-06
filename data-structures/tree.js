@@ -2,9 +2,25 @@
 
 /*
 
-    [20]          [40]          [-15]
+Common binary search tree questions:
 
-[12] [-2] [1]                    [-2]
+  - Given a value insert it at the appropriate spot on the tree
+  - Validate the well formedness of a tree
+
+  * Recursion is often used to traverse binary search trees
+
+The 2 algorithms to traverse the entirety of a tree are:
+
+  - Breadth first traversal
+  - Depth first traversal
+
+*/
+
+/*
+
+     20          40          15
+  /  |  \                     |
+12   2   1                    2
 
 */
 
@@ -191,11 +207,11 @@ class Node {
 
     // Keep digging left
     if (data < this.data && this.left) {
-      return this.left.contains(data);
+      return this.left.contains(data); // don't forget to "return" the value
     }
     // Keep digging right
     else if (data > this.data && this.right) {
-      return this.right.contains(data);
+      return this.right.contains(data); // don't forget to "return" the value
     }
 
     // If node doesn't exist previous checks will be missed and we return null
@@ -203,14 +219,4 @@ class Node {
   }
 }
 
-/*
-
-Notes:
-
-  2 common tree questions are:
-    - Given a value insert it at the appropriate spot on the tree
-    - Validate the well formedness of a binary tree
-
-  Recursion is often used to insert nodes in a binary search tree
-
-*/
+// Didn't get how to validate a binary search tree, revisit later: https://www.udemy.com/course/coding-interview-bootcamp-algorithms-and-data-structure/learn/lecture/8547260#content
