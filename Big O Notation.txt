@@ -1,0 +1,44 @@
+
+Notes:
+
+- Big O measures the number of operations in a function:
+
+    // No matter how large the "boxes" input is this function is O(2)
+    function logFirstTwoBoxes(boxes) {
+        console.log(boxes[0]); // O(1)
+        console.log(boxes[1]); // O(1)
+    }
+
+    O(1) + O(1) = O(2)
+
+---
+
+* O(1) - Constant time:
+
+    - no matter how large the input there is only one operation
+
+    - e.g. accessing an array value by index: arr[0]
+
+    - technically a function can be O(22), O(1000), etc but we usually just sum it up as O(1) or constant time
+
+    - rating: "excellent" (flat line)
+
+
+* O(n) - Linear time:
+
+    - "n" represents the input, the bigger the input the longer the run time:
+
+        input:          [1, 4, 5]
+        complexity:     O(3)
+
+        input:          ['hey']
+        complexity:     O(1)
+
+    - e.g. looping over an entire array
+
+    - rating: "fair" (line rises with input size)
+
+
+
+
+

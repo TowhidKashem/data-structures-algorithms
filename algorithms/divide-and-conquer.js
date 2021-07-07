@@ -7,15 +7,22 @@ function arrayContains(arr, val, iteration = 1) {
   const left = arr.slice(0, center);
   const right = arr.slice(center);
 
+  // During the last split one half will have 1 value and the other will have either 1 or 2 values
+  // depending on whether the original array has an even or odd number of items
+  // but as long as one of the halves has 1 item in it we know it's the end and we can't split the array any further
   if (left.length === 1 || right.length === 1) {
+    // We don't know which half has 1 or possibly 2 values so we check all these indices
+    // if the value is `undefined` it will just evaluate to false so no big deal
     if (
       left[0] === val ||
       left[1] === val ||
       right[0] === val ||
       right[1] === val
     ) {
+      // Found!
       return true;
     } else {
+      // Not found
       return false;
     }
   }
