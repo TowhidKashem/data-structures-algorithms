@@ -1,12 +1,11 @@
-
 Notes:
 
-- Big O measures the number of operations in a function:
+Big O measures the number of operations in a function:
 
-    // No matter how large the "boxes" input is this function is O(2)
+    // No matter how large the "boxes" input this function is O(2)
     function logFirstTwoBoxes(boxes) {
-        console.log(boxes[0]); // O(1)
-        console.log(boxes[1]); // O(1)
+      console.log(boxes[0]);  // O(1)
+      console.log(boxes[1]);  // O(1)
     }
 
     O(1) + O(1) = O(2)
@@ -39,6 +38,145 @@ Notes:
     - rating: "fair" (line rises with input size)
 
 
+  * O(n^2) - Quadratic time:
+
+    - nested loops
+
+    - if you have 3 nested loops it will be O(n^3), 4 nested loops O(n^4) etc..
+
+    - rating: "horrible" (line rises sharply as input size increases)
 
 
+
+Rare:
+
+  * O(n!) - Factorial time
+
+    - if you are doing this you're doing something really wrong
+
+    - for each input there is a nested loop
+
+    - rating "can't get any worse"
+
+---
+
+Usually you'll never see exact numbers in simplified Big O expressions, the only numbers you'll see are:
+
+  O(1)    - constant
+  O(2n)   - 2 loops side to side (can be 5n 6n etc..)
+  O(n^2)  - nested loops
+
+---
+
+What is the Big O of this function:
+
+    function anotherFunChallenge(input) {
+      let a = 5;    // O(1)
+      let b = 10;   // O(1)
+      let c = 50;   // O(1)
+
+      // let i = 0; // O(n)
+      for (let i = 0; i < input; i++) {
+        let x = i + 1;  // O(n)
+        let y = i + 2;  // O(n)
+        let z = i + 3;  // O(n)
+      }
+
+      // let j = 0; // O(n)
+      for (let j = 0;  j < input; j++) {
+        let p = j * 2;  // O(n)
+        let q = j * 2;  // O(n)
+      }
+
+      let whoAmI = "I don't know";  // O(1)
+    }
+
+Answer:
+
+  O(4) + O(7n) = O(4+7n)
+
+Or simplified as:
+
+  O(n)
+
+---
+
+Rules to simplify Big O:
+
+  1. Worst case                   - e.g. if there's an arr[0] and a loop over same array we drop the O(1) and just use the O(n)
+  2. Remove constants             - e.g. O(2n) -> O(n)
+  3. Different terms for inputs   - different inputs must be considered seperately, e.g.
+
+    function compressBoxes(boxes, boxes2) {
+      boxes.forEach(box => { //... });
+      boxes2.forEach(box => { //... });
+    }
+
+    these 2 loops aren't iterating over the same input, "boxes" and "boxes2" can have different lengths. so the Big O here isn't O(n) but O(a + b) or O(n + n)
+
+  4. Drop non dominant terms      - same as simplifying, just drop the lesser of the two, e.g.
+
+    function logAllNumsThenAllPairSums(numbers) {
+      console.log('these are the numbers:');
+      numbers.forEach(num => {
+        console.log(num)
+      });
+
+      console.log('these are their sums:');
+      numbers.forEach(num1 => {
+        numbers.forEach(num2 => num1 + num2);
+      });
+    }
+
+    the non-simplified Big O of this function is O(n + n^2) but we only keep the bigger of the 2 so simplified it becomes O(n^2).
+    Even something as complex as O(n^2 + 3n + 100 + n/2) simply becomes O(n^2)
+
+
+---
+
+Space complexity:
+
+  When a program runs it has 2 ways of remembering things in memory:
+
+    1. Heap (where variables are stored)
+    2. Stack (we keep track of function calls)
+
+  These things add to space complexity:
+
+    1. variables
+    2. data structures
+    3. function calls
+    4. allocations
+
+  all 4 of these are happening here:
+
+    function foo() {
+      const pets = [];    // defined variable + created data structure
+      pets[0] = 'Penny';  // allocated a value in data structure
+    }
+
+    foo();                // made function call
+
+---
+
+  This is O(1) space complexity:
+
+    function sayHey(n) {
+      for (let i = 0; i < n.length; i++) {
+        console.log('hey!');
+      }
+    }
+
+    sayHey([1, 2, 3, 4, 5]); // O(1) bc length of input doesn't matter, we are defining a variable only once (let i = 0;)
+
+
+  This is of O(n) space complexity:
+
+    function sayHeyNTimes(n) {
+      const heyArr = [];                        // O(1) but we ignore this during simplifying
+      for (let i = 0; i < n.length; i++) {      // O(n)
+        heyArr[i] = 'hey!';
+      }
+      return heyArr;
+    }
 
