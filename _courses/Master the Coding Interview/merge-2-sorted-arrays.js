@@ -1,7 +1,5 @@
 function mergeSortedArrays(arr1, arr2) {
-  if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
-    throw Error("both params must be arrays");
-  }
+  if (!Array.isArray(arr1) || !Array.isArray(arr2)) return;
 
   if (!arr1.length) {
     return arr2;
@@ -12,10 +10,10 @@ function mergeSortedArrays(arr1, arr2) {
   const merged = [];
   const larger = arr1.length > arr2.length ? arr1 : arr2;
   const smaller = arr1.length < arr2.length ? arr1 : arr2;
-  const smallerLen = smaller.length - 1;
+  const smallerMaxIndex = smaller.length - 1;
 
   larger.forEach((num, index) => {
-    if (index > smallerLen) {
+    if (index > smallerMaxIndex) {
       merged.push(num);
     } else {
       if (num < smaller[index]) {

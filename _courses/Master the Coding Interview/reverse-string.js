@@ -1,7 +1,5 @@
 function reverseString(str) {
-  if (typeof str !== "string") {
-    throw Error("param provided is either not a string or is empty");
-  }
+  if (typeof str !== "string") return;
 
   if (!str.length) return str;
 
@@ -9,6 +7,7 @@ function reverseString(str) {
   for (char of str) {
     reversed = char + reversed;
   }
+
   return reversed;
 }
 
