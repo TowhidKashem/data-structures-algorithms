@@ -3,6 +3,8 @@ class HashTable {
     this.data = new Array(size);
   }
 
+  // Can be any fast hash algorithm like MD5, etc.
+  // The main purpose is to always return the same value given the same input
   _hash(key) {
     let hash = 0;
     for (let i = 0; i < key.length; i++) {
