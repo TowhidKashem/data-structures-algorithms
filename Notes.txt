@@ -35,6 +35,28 @@ Heurestics for solving problems:
 
 ---
 
+Pointers:
+
+    * Simply a reference to something in memory:
+
+        const obj1 = { a: 'hey' };
+        const obj2 = obj1;
+
+        both of these vars point to the 1 object that exists in memory. But doing:
+
+            delete obj1;
+
+        doesn't get rid of { a: 'hey' }, since it's still being referenced by obj2. If ob2's value is changed to something else:
+
+            obj2 = 'is now a string';
+
+        at this point { a: 'hey' } is erased from memory by JavaScript's automatic garbage collection since it's not in use anywhere
+
+    * In lower level languages where you have to manage your own memory, you need to delete pointers that aren't needed anymore in order
+      to free up resources
+
+---
+
 Arrays (aka "Lists"):
 
     We know the index:
@@ -105,6 +127,21 @@ Hash Tables (aka "Dictionaries"):
         - (?)
 
 ---
+
+Linked Lists:
+
+    Better than arrays in the sense that you don't have to shift/unshift all other values after inserting or deleting nodes, just have to update some pointers
+    One advantage arrays have over linked lists is that you can access values in O(1) by index, in a LL you have to traverse form the head down until you find what 
+    you're looking for so LL are better for insert/delete operations but worse for read when compared to arrays
+
+    Prepend     - O(1)
+    Append      - O(1)
+
+    Lookups     - O(n)
+    Insert      - O(n)
+    Delete      - O(n)
+
+    ** last 2 are O(n) because they all require traversal
 
 
 
