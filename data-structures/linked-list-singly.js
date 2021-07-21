@@ -8,7 +8,9 @@ class Node {
 class LinkedList {
   constructor(value) {
     this.head = new Node(value);
+    // Keeping track of the tail allows append() and prepend() to be O(1)
     this.tail = this.head;
+    // Manually keeping track of length also allows getting it to be O(1)
     this.length = 1;
   }
 

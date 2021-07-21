@@ -141,8 +141,10 @@ Linked Lists:
     Insert      - O(n)
     Delete      - O(n)
 
-    ** last 2 are O(n) because they all require traversal
+    ** last three are O(n) because they all require traversal
 
-
+    Doubly linked lists:
+        - these have pointers to the next node AND the one before, otherwise it's exactly the same with singly LL
+        - unlike singly linked lists these can also be traversed backwards
 
 
