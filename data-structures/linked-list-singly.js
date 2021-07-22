@@ -1,7 +1,7 @@
 class Node {
-  constructor(value, node = null) {
+  constructor(value, nextNode = null) {
     this.value = value;
-    this.next = node;
+    this.next = nextNode;
   }
 }
 
@@ -45,17 +45,17 @@ class LinkedList {
     if (index >= this.length - 1) {
       return this.append(value);
     }
-    const leader = this.getNode(index);
-    leader.next = new Node(value, leader.next);
+    const currentNode = this.getNode(index);
+    currentNode.next = new Node(value, currentNode.next);
     this.length++;
   }
 
   delete(index) {
-    const leader = this.getNode(index);
-    leader.next = leader.next.next;
+    const currentNode = this.getNode(index);
+    currentNode.next = currentNode.next.next;
     // If the last node is being deleted update the tail
     if (index === this.length - 1) {
-      this.tail = leader;
+      this.tail = currentNode;
     }
     this.length--;
   }
@@ -73,5 +73,3 @@ myLL.insert("last", 1000); // 1 ---> 2 ---> 2.5 ---> 3 ---> 4 ---> last
 
 myLL.delete(2); // 1 ---> 2 ---> 3 ---> 4 ---> last
 myLL.delete(4); // 1 ---> 2 ---> 3 ---> 4
-
-console.debug(myLL);
