@@ -7,11 +7,11 @@ class Node {
 
 class LinkedList {
   constructor(value) {
-    this.head = new Node(value);
+    this.head = value ? new Node(value) : null;
     // Keeping track of the tail allows append() and prepend() to be O(1)
     this.tail = this.head;
     // Manually keeping track of length also allows getting it to be O(1)
-    this.length = 1;
+    this.length = value ? 1 : 0;
   }
 
   append(value) {
@@ -59,6 +59,40 @@ class LinkedList {
     }
     this.length--;
   }
+
+  clear() {
+    this.head = null;
+    this.length = 0;
+  }
+
+  reverse() {
+    if (this.length === 1) return this; // No need to reverse
+
+    let first = this.head;
+    let second = this.head.next;
+
+    while (second) {
+      const nextNode = second.next;
+      second.next = first;
+      first = second;
+      second = nextNode;
+    }
+
+    this.head.next = null;
+    this.head = first;
+
+    // // Easy way using existing methods (but it's On^2)
+    // let currentNode = this.head.next;
+    // let index = 1;
+    // while (currentNode) {
+    //   this.delete(index);
+    //   this.prepend(currentNode.value);
+    //   currentNode = currentNode.next;
+    //   index++;
+    // }
+
+    return this;
+  }
 }
 
 const myLL = new LinkedList(2); // 2
@@ -73,3 +107,5 @@ myLL.insert("last", 1000); // 1 ---> 2 ---> 2.5 ---> 3 ---> 4 ---> last
 
 myLL.delete(2); // 1 ---> 2 ---> 3 ---> 4 ---> last
 myLL.delete(4); // 1 ---> 2 ---> 3 ---> 4
+
+myLL.reverse(); // 4 ---> 3 ---> 2 ---> 1
