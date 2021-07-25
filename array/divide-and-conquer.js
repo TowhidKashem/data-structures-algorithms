@@ -1,4 +1,4 @@
-// Divide and conquer + recursive solution
+// Divide and conquer + recursive solution - O(log n)
 function arrayContains(arr, val, iteration = 1) {
   console.log("iteration: ", iteration);
 
@@ -44,7 +44,7 @@ arrayContains([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 7); // Takes 2 iterations
 
 //*-------------------------- vs. --------------------------*//
 
-// Traditional way (On)
+// Traditional way - (On)
 function arrayContains(arr, val) {
   for (let i = 0; i < arr.length; i++) {
     console.log("iteration: ", i + 1);

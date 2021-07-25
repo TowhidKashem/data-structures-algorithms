@@ -1,50 +1,42 @@
 Tree:
 
-        20          40          15
-      /  |  \                    |
-    12   2   1                   2
+    Vocabulary:
+
+        Root        - the starting node of a tree
+        Parent      - a node with Children
+        Child       - comes out of a Parent
+        Siblings    - Child nodes that sit on the same level (does NOT need to originate from the same parent)
+        Leaf        - The outermost nodes of a tree, they don't have any children
 
 
-    Common binary search tree questions:
+    Tree usage examples:
 
-        - Given a value insert it at the appropriate spot on the tree
-        - Validate the well formedness of a tree
+        - Comment threads
+        - Best chess move by machine opponent
+        - Abstract syntax tree (what a programming language does to parse code under the hood)
+        - DOM tree:
 
-    * Recursion is often used to traverse binary search trees
-
-    The 2 algorithms to traverse the entirety of a tree are:
-
-        - Breadth first traversal
-        - Depth first traversal
-
-
-    *** Didn't get how to validate a binary search tree, revisit later: https://www.udemy.com/course/coding-interview-bootcamp-algorithms-and-data-structure/learn/lecture/8547260#content
+            <html>              - Root
+            <body>              - Parent
+            <div>               - Child
+            <div> & <footer>    - Siblings
+            <head> & <body>     - Leaf
 
 
+    Similar to linked lists, LL are actually a type of tree but with only a single straight linear path
 
-    const tree = {
-        nodes: [{
-            data: 20,
-            children: [{
-            data: 0,
-            children: [{
-                data: 12,
-                children: null
-            }, {
-                data: -2,
-                children: null
-            }, {
-                data: 1,
-                children: null
-            }]
-            }, {
-                data: 40
-            }, {
-                data: -15,
-                children: [{
-                    data: -2,
-                    children: null
-                }]
-            }]
-        }]
-    };
+
+    Binary Trees:
+
+        - 2 types:
+            - Perfect binary tree  - all nodes have 2 children each (except for the Leaf nodes, those have no children), the tree looks like a bunch of perfect triangles
+            - Full binary tree     - not complete and even like the perfect binary tree, each node may have 0 or 2 children (but never 1 child)
+
+        - Perfect binary trees are better
+            - the number of nodes double with each level
+            - the number of nodes in the bottom most level equal to the sum of all nodes above it + 1
+                - this means half of the tree's nodes are on the last level
+            - perfect binary search trees let you skip the need to visit all nodes and can therefore be more efficient than other data structures
+                - e.g. instead of O(n) you can now be O(log n) which is better
+                - think of O(log n) as saying the next step is to check one of two places (nodes) but we don't need to check both only 1
+

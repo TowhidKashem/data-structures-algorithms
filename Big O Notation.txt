@@ -23,6 +23,14 @@ Big O measures the number of operations in a function:
     - rating: "excellent" (flat line)
 
 
+* O(log n) - Logarithmic time:
+
+    - when you look for a word in a dictionary (an alphabetically "sorted" data set), you don't look at every single word one by one O(n) 
+      instead you do "divide and conquer" by flipping to the letters page then eventually finding the word O(log n)
+
+    - rating: "good" (slight rise)
+
+
 * O(n) - Linear time:
 
     - "n" represents the input, the bigger the input the longer the run time:
