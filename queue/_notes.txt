@@ -1,0 +1,21 @@
+Queues:
+
+    - FIFO: first in first out (like a line at the bank)
+    - Can only be used for accessing the first node
+        - The limited number of actions one can perform on them is a feature by design, we sometimes want to limit what the user can do on a data structure for greater control
+    - Can be traversed but not really meant to be, if you need traversal this may not be the right data structures to use
+    - Can be implemented using arrays or linked lists
+        - But using an array is bad because when the first item is removed the rest of the item's indices needs to be shifted O(n),
+          but if a LL is used this operation is O(1) because you only need to update some pointers
+
+
+    Queue usage examples:
+        - Resturant check-in app to get tables
+        - Uber/Lyft ride request
+        - Printer order (several people click print but it will print in order of who requested first)
+
+
+    - If asked to implement a Queue using 2 stacks, the key is to use the second stack for temp storage, so empty the
+      first stack using pop() and push() each item into the second storage stack, then pop() the last item off the 
+      storage stack to get the first item in the queue. Next empty the storage stack and place back all the items back
+      into the first stack again.

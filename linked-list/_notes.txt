@@ -1,0 +1,18 @@
+Linked Lists:
+
+    Better than arrays in the sense that you don't have to shift/unshift all other values after inserting or deleting nodes, just have to update some pointers
+    One advantage arrays have over linked lists is that you can access values in O(1) by index, in a LL you have to traverse form the head down until you find what 
+    you're looking for so LL are better for insert/delete operations but worse for read when compared to arrays
+
+    Prepend     - O(1)
+    Append      - O(1)
+
+    Lookups     - O(n)
+    Insert      - O(n)
+    Delete      - O(n)
+
+    ** last three are O(n) because they all require traversal
+
+    Doubly linked lists:
+        - these have pointers to the next node AND the one before, otherwise it's exactly the same with singly LL
+        - unlike singly linked lists these can also be traversed backwards

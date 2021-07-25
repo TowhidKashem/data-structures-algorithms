@@ -1,4 +1,3 @@
-// Same as a queue except "First In Last Out" (like a can of pringles)
 class Stack {
   constructor() {
     this.data = [];

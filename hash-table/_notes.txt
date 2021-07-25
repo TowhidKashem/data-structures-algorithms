@@ -1,0 +1,31 @@
+Hash Tables (aka "Hash Maps", "Objects", "Dictionaries"):
+
+    The computer takes the key and runs it through a hash function which converts it to a 
+    memory address so that next time it knows where to access the data. Hash functions (e.g. MD5) always
+    returns the same output given the same input
+
+    Since Hash Tables don't preserve order if you delete a key theres no need to shift all the other values unlike arrays
+    hence all these operations are O(1):
+
+        Insert      - O(n)
+        Lookups     - O(1)
+        Delete      - O(n)
+        Search      - O(1)
+
+    Above are best case scenerios, in the worst case scenerio all these can be O(n) due to collisions.
+    Collisions are unavoidable in a large enough data set given the limited availability of memory space. There are ways 
+    the launguage handles collisions under the hood like storing all data at a given adddress in a linked lists for example. 
+    In this case a lookup is an O(n) operation since the computer needs to traverse this list to find the value it's looking for
+
+
+    Map()
+        - allows any data type as keys (e.g. numbers, functions, etc) vs objects that only allow strings
+        - maintains insertion order
+
+    Set()
+        - unlike maps and objects sets can only hold 1 item in a slot (like an array)
+        - the difference between a set and an array is that all values in a set are unique whereas an array can hold multiple duplicate values
+        - maintains insertion order (?)
+
+    WeakMap()
+        - (?)

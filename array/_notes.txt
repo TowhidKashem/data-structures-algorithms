@@ -1,0 +1,33 @@
+Arrays (aka "Lists"):
+
+    We know the index:
+
+        Lookups     - O(1)
+
+    After insert or delete the rest of the items need to be shifted/their place updated:
+
+        Insert      - O(n)
+        Delete      - O(n)
+
+    It's at the end so no other val needs to be updated:
+
+        Append      - O(1)
+
+    2 types of arrays:
+
+        1. Static arrays    - you define how many items an array will hold when making the array, low level languages like C has these
+        2. Dynamic arrays   - high level languages like JavaScript and Python uses these, automatically allocates space in memory (i.e. expands) based on value length
+
+    Notes
+        * Treat string problems as array problems, most can be solved using arrays
+        * Arrays are great for storing sorted data and therefore to use in sorting problems
+
+    Pros:
+        * Fast Lookups
+        * Fast push/pop
+        * Storing ordered data
+    
+    Cons:
+        * Slow inserts
+        * Slow deletes
+        * Fixed size (if using static arrays)

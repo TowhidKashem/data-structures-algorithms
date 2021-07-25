@@ -1,0 +1,12 @@
+Stacks:
+
+    - LIFO: last in first out (like a can of pringles)
+    - Can only be used for accessing the last node
+        - The limited number of actions one can perform on them is a feature by design, we sometimes want to limit what the user can do on a data structure for greater control
+    - Can be traversed but not really meant to be, if you need traversal this may not be the right data structures to use
+    - Can be implemented using either arrays or linked lists
+
+    Stack usage examples:
+        - Browser history
+        - Undo/redo buttons
+        - Call stack for handling events
