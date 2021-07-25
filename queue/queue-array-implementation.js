@@ -1,3 +1,4 @@
+// Not recomended, use LL for queue implementations instead
 class Queue {
   constructor() {
     this.arr = [];

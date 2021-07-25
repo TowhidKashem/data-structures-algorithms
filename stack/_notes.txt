@@ -4,7 +4,7 @@ Stacks:
     - Can only be used for accessing the last node
         - The limited number of actions one can perform on them is a feature by design, we sometimes want to limit what the user can do on a data structure for greater control
     - Can be traversed but not really meant to be, if you need traversal this may not be the right data structures to use
-    - Can be implemented using either arrays or linked lists
+    - Can be implemented using either arrays or linked lists, but there is no real benefit to using LL since array.pop() is a O(1) operation and using arrays is much simpler for stacks
 
     Stack usage examples:
         - Browser history

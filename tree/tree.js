@@ -1,56 +1,3 @@
-/*------------------------------------------------ Tree ------------------------------------------------*/
-
-/*
-
-Common binary search tree questions:
-
-  - Given a value insert it at the appropriate spot on the tree
-  - Validate the well formedness of a tree
-
-  * Recursion is often used to traverse binary search trees
-
-The 2 algorithms to traverse the entirety of a tree are:
-
-  - Breadth first traversal
-  - Depth first traversal
-
-*/
-
-/*
-
-     20          40          15
-  /  |  \                     |
-12   2   1                    2
-
-*/
-
-// const tree = {
-//   nodes: [{
-//     data: 20,
-//     children: [{
-//       data: 0,
-//       children: [{
-//         data: 12,
-//         children: null
-//       }, {
-//         data: -2,
-//         children: null
-//       }, {
-//         data: 1,
-//         children: null
-//       }]
-//     }, {
-//       data: 40
-//     }, {
-//       data: -15,
-//       children: [{
-//         data: -2,
-//         children: null
-//       }]
-//     }]
-//   }]
-// };
-
 class Node {
   constructor(data) {
     this.data = data;
@@ -218,5 +165,3 @@ class Node {
     return null;
   }
 }
-
-// Didn't get how to validate a binary search tree, revisit later: https://www.udemy.com/course/coding-interview-bootcamp-algorithms-and-data-structure/learn/lecture/8547260#content
