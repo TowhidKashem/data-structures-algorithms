@@ -12,18 +12,19 @@ Tree:
     Tree usage examples:
 
         - Comment threads
-        - Best chess move by machine opponent
-        - Abstract syntax tree (what a programming language does to parse code under the hood)
+        - Google search results
+        - Determining the best possible chess move by machine opponent
+        - Abstract syntax tree (what a programming language does to parse instructions under the hood)
         - DOM tree:
 
             <html>              - Root
             <body>              - Parent
             <div>               - Child
             <div> & <footer>    - Siblings
-            <head> & <body>     - Leaf
+            <li>                - Leaf
 
 
-    Similar to linked lists, LL are actually a type of tree but with only a single straight linear path
+    - Trees are similar to linked lists, LL are actually a type of tree but with only a single straight linear path
 
 
     Binary Trees:
@@ -39,4 +40,42 @@ Tree:
             - perfect binary search trees let you skip the need to visit all nodes and can therefore be more efficient than other data structures
                 - e.g. instead of O(n) you can now be O(log n) which is better
                 - think of O(log n) as saying the next step is to check one of two places (nodes) but we don't need to check both only 1
+
+
+Binary search trees:
+
+    - a node can only have up to 2 children
+
+    - all nodes to the right of the parent must be greater in value
+    - all nodes to the left of the parent must be smaller in value
+
+
+    Balanced binary search trees:
+
+        Look ups            - O(log n)
+        
+                            unlike an array you don't need it iterate over the whole tree to find a node O(n)
+                            if the node is larger or smaller than the node you're looking for go either right or
+                            left and work in a much smaller subset
+
+        Insert / Delete     - O(log n)
+        
+                            not as efficient as hash tables O(1)
+
+                            
+        * So binary search trees are best for lookups not for inserts and deletes. But they're still better at the latter than arrays O(n)
+        since once something is added/removed other nodes don't need to be shifted
+
+
+    Unbalanced binary search trees:
+
+        These have a worst case complexity of O(n) for all lookups/inserts and deletes because they can become something akin to a 
+        linked list where each node needs to be traversed to find the one you're looking for. This is why balanced trees are always best.
+
+
+
+
+
+
+
 
