@@ -1,3 +1,7 @@
+// A hash table is just an array in the background, the key is converted to a numeric index using a hash function (relative to the size of the array)
+// this is the position where the value is stored, we also store the key in case we need to do collision resolution
+// collisions happen when the same index is generated for 2 different keys, this is much more likely if the array size is small
+// in this case we need to store both key and value and loop through these to update only the one that matters
 class HashTable {
   constructor(size) {
     this.data = new Array(size);

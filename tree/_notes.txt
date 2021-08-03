@@ -71,11 +71,3 @@ Binary search trees:
 
         These have a worst case complexity of O(n) for all lookups/inserts and deletes because they can become something akin to a 
         linked list where each node needs to be traversed to find the one you're looking for. This is why balanced trees are always best.
-
-
-
-
-
-
-
-
