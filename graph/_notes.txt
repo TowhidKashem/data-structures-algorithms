@@ -1,0 +1,31 @@
+
+Graphs:
+
+    - Ideal data structure for mapping relationships
+
+    - Linked lists are a type of Tree which is a type of Graph
+
+    - Made up of Nodes (aka Vertex) and Edges (edges are the links connecting the nodes)
+
+    - Types of graphs:
+
+        1. Directed - can only traverse in a single direction (uni-directional)
+            e.g. twitter followee/follower relationship
+        2. Undirected - can traverse in any direction (bi-directional)
+            e.g. facebook friend relationship
+
+        --
+
+        1. Weighted - information is stored in the edges
+            e.g. google maps shortest path from point A to point B 
+            (each edge holds a numeric value representing the distance in miles between nodes)
+
+        2. Un-weighted - no information held in the edges, all paths between nodes are the same
+
+        *** Weighted graphs are often used when trying to determine the most optimal path to reach a node
+
+        --
+
+        1. Cyclic - at least some nodes connected to each other by paths
+
+        2. Acyclic - no nodes are connected to each other
