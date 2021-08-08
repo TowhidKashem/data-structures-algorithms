@@ -1,3 +1,16 @@
+/*
+
+Simple sorting algorithms:
+  - Bubble sort
+  - Insertion sort
+  - Selection sort
+
+More advanced sorting algorithms:
+  - Merge sort
+  - Quick sort
+
+*/
+
 // --- Bubble sort:
 
 // O(n^2)

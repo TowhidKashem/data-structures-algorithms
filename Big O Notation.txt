@@ -55,6 +55,10 @@ Big O measures the number of operations in a function:
     - rating: "horrible" (line rises sharply as input size increases)
 
 
+  * O(2^n) - Exponential time:
+
+    - recursive algorithms
+
 
 Rare:
 

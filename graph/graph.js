@@ -42,10 +42,10 @@ const graph = {
 
 Explanation:
     * The index represents the nodes, and the data represents the connections of that node
-    * 0 is connected to 2 (in 0 index)
-    * 1 is connected to 2 and 3 (in 1 index)
-    * 2 is connected to 0, 1 and 3 (in 2 index)
-    * 3 is connected to 1 and 2 (in 3 index)
+    * 0 is connected to 2
+    * 1 is connected to 2 and 3
+    * 2 is connected to 0, 1 and 3
+    * 3 is connected to 1 and 2
 
 
 // Array implementation (not recomended)
@@ -108,7 +108,7 @@ class Graph {
     this.adjacentList[node1].push(node2);
     this.adjacentList[node2].push(node1);
   }
-  // For debugging:
+  // For debugging
   showConnections() {
     const allNodes = Object.keys(this.adjacentList);
     for (let node of allNodes) {
