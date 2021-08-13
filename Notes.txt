@@ -54,4 +54,3 @@ Pointers:
 
     * In lower level languages where you have to manage your own memory, you need to delete pointers that aren't needed anymore in order
       to free up resources
-

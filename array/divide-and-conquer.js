@@ -1,4 +1,4 @@
-// Divide and conquer + recursive solution - O(log n)
+// Divide and conquer + recursive solution - O(n log n)
 function arrayContains(arr, val, iteration = 1) {
   console.log("iteration: ", iteration);
 
